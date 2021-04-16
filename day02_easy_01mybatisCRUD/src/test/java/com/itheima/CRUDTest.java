@@ -100,8 +100,8 @@ public class CRUDTest {
     @Test
     public void saveUser2(){
         User user = new User();
-        user.setName("wbw5555");
-        user.setPassword("wxl6666");
+        user.setName("wbw9999");
+        user.setPassword("wxl0000");
         System.out.println("插入前"+user);
         //执行保存方法
         userDao.save(user);
