@@ -23,7 +23,7 @@
 
 <!--    更新用户-->
     <update id="update" parameterType="user">
-        update user set username = #{username},password = #{password} where id = #{id};
+        update user set username = #{name},password = #{password} where id = #{id};
     </update>
 <!--    删除用户-->
     <delete id="delete" parameterType="Integer">
