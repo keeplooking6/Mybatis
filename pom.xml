@@ -15,14 +15,9 @@
         <module>day01_easy_04mybatis_design</module>
         <module>day02_easy_01mybatisCRUD</module>
         <module>day02_easy_02mybatisDao</module>
+        <module>day03_easy_01datasourceAndTx</module>
+        <module>day03_easy_02dynamicSQL</module>
+
     </modules>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
 </project>
