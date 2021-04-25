@@ -8,6 +8,7 @@
     </properties>
     <typeAliases>
         <typeAlias type="com.itheima.domain.User" alias="user"/>
+        <typeAlias type="com.itheima.domain.Vo.QueryVo"/>
     </typeAliases>
 
 <!--    配置环境-->

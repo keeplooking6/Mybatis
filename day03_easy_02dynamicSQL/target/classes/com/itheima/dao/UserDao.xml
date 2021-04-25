@@ -3,14 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.dao.UserDao">
-    
+
     <resultMap id="userNameMap" type="com.itheima.domain.User">
         <id property="id" column="id"></id>
         <result property="name" column="username"></result>
     </resultMap>
+    <sql id="default">
+        select * from user
+    </sql>
     <!--    查询所有-->
     <select id="findAll" resultType="user">
-        select * from user;
+        <include refid="default"></include>
     </select>
 
 <!--    根据id查询用户-->
@@ -44,5 +47,15 @@
             </if>
         </where>
 
+    </select>
+    <select id="findByIds" resultMap="userNameMap" parameterType="queryVo">
+        <include refid="default"></include>
+        <where>
+            <if test="ids != null and ids.size()>0">
+                <foreach collection="ids" open="and id in(" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
     </select>
 </mapper>

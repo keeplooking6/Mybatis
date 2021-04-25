@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * @author keep-looking
  * @date 2021/4/1 - 9:01
@@ -17,4 +19,5 @@ import lombok.ToString;
 @NoArgsConstructor
 public class QueryVo {
     private User user;
+    private List<Integer> ids;
 }

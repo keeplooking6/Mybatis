@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -86,6 +87,22 @@ public class CRUDTest {
         User u = new User();
         u.setName("wbw");
         List<User> users = userDao.findByCondition(u);
+        for (User user:
+                users) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public void selectByIds() {
+        QueryVo vo = new QueryVo();
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(131);
+        list.add(132);
+        list.add(133);
+        vo.setIds(list);
+
+        List<User> users = userDao.findByIds(vo);
         for (User user:
                 users) {
             System.out.println(user);

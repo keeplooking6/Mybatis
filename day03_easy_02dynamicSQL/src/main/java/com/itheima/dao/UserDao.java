@@ -17,4 +17,9 @@ public interface UserDao {
     List<User> findByName(String name);
     List<User> queryVo(QueryVo vo);
     List<User> findByCondition(User user);
+    /*
+        根据queryvo中提供的用户id来查询用户信息
+     */
+
+    List<User> findByIds(QueryVo vo);
 }
