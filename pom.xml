@@ -17,6 +17,8 @@
         <module>day02_easy_02mybatisDao</module>
         <module>day03_easy_01datasourceAndTx</module>
         <module>day03_easy_02dynamicSQL</module>
+        <module>day03_easy_04manyTomany</module>
+        <module>day03_easy_03oneToMany</module>
 
     </modules>
 
