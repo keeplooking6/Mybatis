@@ -8,9 +8,22 @@
         select * from user
     </sql>
     <!--    查询所有-->
-    <select id="findAll" resultType="user">
-        <include refid="default"></include>
+    <select id="findAll" resultMap="UserAllCount">
+        select u.*,a.id as aid,a.uid,a.money from user u left join account a on u.id=a.uid;
     </select>
+
+    <resultMap id="UserAllCount" type="user">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+<!--        配置User对象中account集合的映射-->
+        <collection property="account" ofType="account">
+            <id property="id" column="aid"/>
+            <result property="uid" column="uid"/>
+            <result property="money" column="money"/>
+        </collection>
+    </resultMap>
 
 
 

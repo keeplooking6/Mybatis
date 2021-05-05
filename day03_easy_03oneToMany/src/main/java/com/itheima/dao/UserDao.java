@@ -12,6 +12,10 @@ import java.util.List;
  * 持久化层
  */
 public interface UserDao {
+    /**
+     * 查询每个用户所拥有的全部账号信息
+     * @return
+     */
     List<User> findAll();
     User findById(Integer id);
 

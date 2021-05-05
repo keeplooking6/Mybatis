@@ -7,7 +7,7 @@
     <sql id="default">
         select * from account
     </sql>
-    <!--    查询所有-->
+    <!--    查询每个账号所属的用户信息-->
     <select id="findAll" resultType="account">
         <include refid="default"></include>
     </select>

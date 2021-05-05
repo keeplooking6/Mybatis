@@ -71,9 +71,8 @@ public class AccountTest {
         List<Account> all = accountDao.findAll2();
         for (Account account:
                 all) {
-            System.out.println("------------每个account的信息-------------");
+            System.out.println("------------每个account及账号所属的用户信息-------------");
             System.out.println(account);
-            System.out.println(account.getUser());
         }
     }
 

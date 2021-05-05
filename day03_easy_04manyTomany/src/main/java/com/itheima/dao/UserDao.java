@@ -12,14 +12,11 @@ import java.util.List;
  * 持久化层
  */
 public interface UserDao {
+    /**
+     * 查询每个用户所拥有的全部角色信息
+     */
     List<User> findAll();
     User findById(Integer id);
-    List<User> findByName(String name);
-    List<User> queryVo(QueryVo vo);
-    List<User> findByCondition(User user);
-    /*
-        根据queryvo中提供的用户id来查询用户信息
-     */
 
-    List<User> findByIds(QueryVo vo);
+
 }
