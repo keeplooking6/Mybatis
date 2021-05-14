@@ -28,7 +28,7 @@ public class RoleTest {
     public void init() throws IOException {
         in = Resources.getResourceAsStream("SqlMapConfig.xml");
         factory = new SqlSessionFactoryBuilder().build(in);
-        sqlSession = factory.openSession();
+        sqlSession = factory.openSession(true);
         roleDao = sqlSession.getMapper(RoleDao.class);
     }
 

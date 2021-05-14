@@ -84,7 +84,7 @@ public class CRUDTest {
 
     @Test
     public void findByName(){
-        List<User> users = userDao.findByName("w");
+        List<User> users = userDao.findByName("%w%");
         for (User user:
             users) {
             System.out.println(user);

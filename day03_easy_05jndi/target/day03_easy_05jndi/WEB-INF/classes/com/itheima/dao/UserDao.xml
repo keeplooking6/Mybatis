@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.UserDao">
+    
+    <resultMap id="userNameMap" type="com.itheima.domain.User">
+        <id property="id" column="id"></id>
+        <result property="name" column="username"></result>
+    </resultMap>
+    <!--    查询所有-->
+    <select id="findAll" resultMap="userNameMap">
+        select * from user;
+    </select>
+
+    <!--保存用户-->
+    <insert id="save" parameterType="user">
+        <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into user(username,password)values(#{name},#{password});
+    </insert>
+
+<!--    更新用户-->
+    <update id="update" parameterType="user">
+        update user set username = #{name},password = #{password} where id = #{id};
+    </update>
+<!--    删除用户-->
+    <delete id="delete" parameterType="Integer">
+        delete from user where id = #{id};
+    </delete>
+<!--    根据id查询用户-->
+    <select id="findById" parameterType="Integer" resultType="user">
+        select * from user where id = #{id};
+    </select>
+<!--    根据名字模糊查询用户-->
+    <select id="findByName" parameterType="String" resultType="user">
+<!--         select * from user where username like #{username};-->
+        select * from user where username like '%${value}%';
+    </select>
+<!--    查询所有用户-->
+    <select id="findTotal" resultType="int">
+        select count(id) from user;
+    </select>
+<!--将vo对象作为查询条件查询数据库-->
+    <select id="queryVo" parameterType="com.itheima.domain.Vo.QueryVo" resultMap="userNameMap">
+        select * from user where username like #{user.name};
+    </select>
+</mapper>

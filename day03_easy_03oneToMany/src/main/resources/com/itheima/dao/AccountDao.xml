@@ -11,7 +11,7 @@
     <select id="findAll" resultType="account">
         <include refid="default"></include>
     </select>
-
+<!--多对一-->
 <!--    定义封装account和user的resultMap-->
     <resultMap id="accountUserMap" type="account" >
         <id property="id" column="aid"/>

@@ -19,6 +19,10 @@
         <module>day03_easy_02dynamicSQL</module>
         <module>day03_easy_04manyTomany</module>
         <module>day03_easy_03oneToMany</module>
+        <module>day03_easy_05jndi</module>
+        <module>day04_easy_01lazy</module>
+        <module>day04_easy_02cache</module>
+        <module>day04_easy_03annotation_mybatis</module>
 
     </modules>
 

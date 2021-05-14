@@ -22,6 +22,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List<User> findAll() {
         SqlSession session = factory.openSession();
+//        取代getMapper代理对象，直接写内部实现细节
         List<User> user = session.selectList("com.itheima.dao.UserDao.findAll");
         session.close();
         return user;

@@ -45,43 +45,52 @@ public class AccountTest {
         in.close();
     }
 
+
+    /**
+     * 查找所有的账号信息
+     */
     @Test
     public void selectAll() {
 
         List<Account> all = accountDao.findAll();
-        for (Account account:
-             all) {
+        for (Account account :
+                all) {
             System.out.println(account);
         }
     }
 
+    /**
+     * 查找账号对应的某部分用户信息（使用AccountUser实体类）---使用AccoutUserDao.xml的findAllAccountUser()方法
+     */
     @Test
     public void selectAllAccountUser() {
 
         List<AccountUser> allAccountUser = accountUserDao.findAllAccountUser();
-        for (AccountUser accountUser:
+        for (AccountUser accountUser :
                 allAccountUser) {
             System.out.println(accountUser);
         }
     }
 
+    /**
+     * 查询所有（Account中存放着User对象）---使用AccountDao.xml中的findAll2方法
+     */
     @Test
     public void selectAll2() {
 
         List<Account> all = accountDao.findAll2();
-        for (Account account:
+        for (Account account :
                 all) {
-            System.out.println("------------每个account及账号所属的用户信息-------------");
+            System.out.println("------------每个account及账号所属的用户的全部信息-------------");
             System.out.println(account);
         }
     }
 
-//    @Test
-    public void findById(){
+        @Test
+    public void findById() {
         Account user = accountDao.findById(130);
         System.out.println(user);
     }
-
 
 
 }

@@ -93,6 +93,10 @@ public class CRUDTest {
         }
     }
 
+    /**
+     * 根据多个id查询匹配用户
+     */
+
     @Test
     public void selectByIds() {
         QueryVo vo = new QueryVo();

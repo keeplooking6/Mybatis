@@ -3,16 +3,13 @@ package com.itheima;
 import com.itheima.dao.UserDao;
 import com.itheima.dao.impl.UserDaoImpl;
 import com.itheima.domain.User;
-import com.mysql.cj.Session;
 import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.xml.stream.FactoryConfigurationError;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -81,7 +78,7 @@ public class CRUDTest {
 
     @Test
     public void findByName(){
-        List<User> users = userDao.findByName("%w%");
+        List<User> users = userDao.findByName("%w%");//预编译
         for (User user:
             users) {
             System.out.println(user);
