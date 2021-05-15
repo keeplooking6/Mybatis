@@ -23,6 +23,7 @@
         <module>day04_easy_01lazy</module>
         <module>day04_easy_02cache</module>
         <module>day04_easy_03annotation_mybatis</module>
+        <module>day04_easy_04OneToOne</module>
 
     </modules>
 

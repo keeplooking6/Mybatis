@@ -30,6 +30,7 @@
 
     <mappers>
 <!--        <mapper resource="com/itheima/dao/UserDao.xml"/>-->
+<!--        要配置别名的包-->
         <package name="com.itheima.dao"/>
     </mappers>
 </configuration>
